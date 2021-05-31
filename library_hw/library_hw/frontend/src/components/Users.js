@@ -3,21 +3,20 @@ import React from 'react'
 
 const UserItem = ({user}) => {
     return (
+
         <tr>
             <td>
                 {user.email}
             </td>
 
             <td>
-                {user.first_name}
-            </td>
-            <td>
-                {user.last_name}
+                {user.name}
             </td>
             <td>
                 {user.birthday_year}
             </td>
         </tr>
+
     )
 }
 
@@ -26,16 +25,13 @@ const UserList = ({users}) => {
     return (
         <table>
             <th>
-                ID
+                Email
             </th>
             <th>
-                First name
+                Имя пользователя
             </th>
             <th>
-                Last Name
-            </th>
-            <th>
-                Birthday year
+                Дата рождения
             </th>
             {users.map((user) => <UserItem user={user}/>)}
         </table>
