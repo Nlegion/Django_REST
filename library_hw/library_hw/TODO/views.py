@@ -5,6 +5,8 @@ from rest_framework import mixins, viewsets
 from rest_framework.pagination import PageNumberPagination, LimitOffsetPagination
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.decorators import *
+from rest_framework.authtoken.models import Token
 
 
 # Create your views here.
@@ -30,6 +32,12 @@ class ProjectModelViewSet(ModelViewSet):
         if name:
             project = project.filter(name__contains=name)
         return project
+
+
+@api_view(['GET'])
+def project_view(request):
+    token = Token.objects.filter(key=request.headers)
+    token.delete()
 
 
 class TODOViewSet(ModelViewSet):

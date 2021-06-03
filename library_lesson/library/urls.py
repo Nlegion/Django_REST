@@ -15,25 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework.routers import SimpleRouter
-from authors.views import *
+from rest_framework.routers import DefaultRouter
+from rest_framework.urls import *
+from rest_framework.authtoken import views
+from authors.views import AuthorModelViewSet, ArticleModelViewSet, BiographyModelViewSet
 
-router = SimpleRouter()
-# router.register('authors', AuthorModelViewSet)
-# router.register('books', BookModelViewSet)
-# router.register('biography', BiographyModelViewSet)
+router = DefaultRouter()
+router.register('authors', AuthorModelViewSet)
 router.register('article', ArticleModelViewSet, basename='article')
+router.register('biography', BiographyModelViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('api/article-list-veiw', ArticleModelViewSet.as_view({'get':'list'})),
-    path('api/article-list-veiw/kwargs', ArticleModelViewSet.as_view({'get': 'list'})),
-
-    ]
-# path('api/article-veiw', ArticleModelView()),
-# path('api/article-veiw', article_view),
-#     path('api/article-list-veiw', ArticleListModelView.as_view()),
-#     path('api/article-create-veiw', ArticleCreateModelView.as_view()),
-#     path('api/article-create-veiw/<int:pk>', ArticleCreateModelView.as_view()),
-# ]
+    path('api-auth/', include('rest_framework.urls')),
+    path('api-token-auth/', views.obtain_auth_token),
+]
