@@ -58,8 +58,16 @@ ROOT_URLCONF = 'library.urls'
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3001',
+    'http://localhost:3000',
     'http://127.0.0.1:3001',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8001',
+    'http://127.0.0.1:8000',
     'http://192.168.31.27:3001',
+    'http://192.168.31.27:3000',
+    'http://172.19.185.146:3001',
+    'http://172.19.185.146:3000',
+    # 'http://localhost:3000/',
 ]
 
 TEMPLATES = [
@@ -140,7 +148,8 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
+        # 'rest_framework.permissions.IsAuthenticated',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES.': [
         'rest_framework.authentication.SessionAuthentication',

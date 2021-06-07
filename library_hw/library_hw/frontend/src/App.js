@@ -4,56 +4,46 @@ import './App.css';
 import UserList from "./components/Users";
 import ProjectList from "./components/Project";
 import TodoPage from "./components/TodoPage";
+import LoginForm from "./components/Auth";
 import axios from 'axios';
 import {HashRouter, Route, Redirect, Switch, Link} from "react-router-dom";
 
-
 class App extends React.Component {
     constructor(props) {
-
-        // super(props);
-        // const user1 = {email: 1, name: 'Грин', birthday_year: 1880}
-        // const user2 = {email: 2, name: 'Пушкин', birthday_year: 1799}
-        // const users = [user1, user2]
-        //
-        // const project1 = {id: 1, title: 'Алые паруса', user: 'user1', link: 'https://www.gazeta.ru/'}
-        // const project2 = {id: 2, title: 'Пиковая дама', user: 'user2', link: 'https://www.gazeta.ru/'}
-        // const projects = [project1, project2]
-        //
-        // const todo1 = {
-        //     id: 1,
-        //     text_fields: 'Алые паруса',
-        //     created: '2021-05-30T16:49:41.828363+03:00',
-        //     updated: '2021-05-30T16:49:41.828410+03:00',
-        //     is_active: true,
-        //     project: 1,
-        //     author: 1
-        // }
-        // const todo2 = {
-        //     id: 2, text_fields: 'тест 2',
-        //     created: '2021-05-30T16:49:52.215709+03:00',
-        //     updated: '2021-05-30T16:49:52.215837+03:00',
-        //     is_active: false,
-        //     project: 2,
-        //     author: 1
-        // }
-        // const todos = {todo1, todo2}
-        //
-        // this.state = {
-        //     'users': users,
-        //     'projects': projects,
-        //     'todos': todos,
-        // }
-
         super(props);
+        let token = localStorage.getItem('token');
         this.state = {
-            'users': []
+            'users': [],
+            'projects': [],
+            'TODO': [],
+            'token': token
         }
     }
 
-    componentDidMount() {
+    restore_token() {
+        let token = localStorage.getItem('token');
+        this.setState(
+            {
+                'token': token
+            }
+        );
+
+    }
+
+    create_header() {
+        if (!this.is_auth())
+            return {};
+
+        return {
+            'Authorization': 'Token ' + this.state.token
+        }
+    }
+
+    load_data() {
+        let headers = this.create_header();
+
         axios
-            .get('http://127.0.0.1:8000/api/users/')
+            .get('http://127.0.0.1:8000/api/users/', {headers})
             .then(response => {
                 const users = response.data
                 this.setState(
@@ -61,7 +51,8 @@ class App extends React.Component {
                         'users': users
                     }
                 )
-            }).catch(error => console.log(error))
+            })
+            .catch(error => console.log(error))
 
         axios
             .get('http://127.0.0.1:8000/filters/title/')
@@ -72,8 +63,8 @@ class App extends React.Component {
                         'projects': projects
                     }
                 )
-            }).catch(error => console.log(error))
-
+            })
+            .catch(error => console.log(error))
         axios
             .get('http://127.0.0.1:8000/api/ToDo/')
             .then(response => {
@@ -84,19 +75,44 @@ class App extends React.Component {
                     }
                 )
             }).catch(error => console.log(error))
-
     }
 
-    // render() {
-    //     return (
-    //
-    //         <div>
-    //             <div className="menu">Menu</div>
-    //             <div><UserList users={this.state.users}/></div>
-    //             <div className="footer">Footer</div>
-    //         </div>
-    //     )
-    // }
+
+    componentDidMount() {
+        this.restore_token();
+        this.load_data();
+    }
+
+    is_auth() {
+        return this.state.token != '';
+    }
+
+    logout() {
+        this.setState(
+            {
+                'token': ''
+            }
+        );
+    }
+
+    get_token(login, password) {
+        axios
+            .post(
+                'http://127.0.0.1:8000/api-token-auth/',
+                {"username": login, "password": password}
+            )
+            .then(response => {
+                this.setState(
+                    {
+                        'token': response.data.token
+                    }
+                );
+                localStorage.setItem('token', response.data.token)
+
+                console.log(this.state.token);
+            })
+            .catch(error => alert('Лажа с паролем'))
+    }
 
 
     render() {
@@ -114,6 +130,12 @@ class App extends React.Component {
                             <li>
                                 <Link to='/todos'>Тудусики</Link>
                             </li>
+                            <li>
+                                {this.is_auth() ?
+                                    <button onClick={() => this.logout()}>Логаут</button>
+                                    :
+                                    <Link to='/login'>Логин</Link>}
+                            </li>
                         </ul>
                     </nav>
                     <Switch>
@@ -121,8 +143,9 @@ class App extends React.Component {
                         <Route exact path='/projects' component={() => <ProjectList projects={this.state.projects}/>}/>
                         <Route exact path='/todo/:id' component={() => <TodoPage todos={this.state.todos}/>}/>
                         <Redirect from='/users' to='/'/>
-
-                        {/*<Redirect from='/' to '/authors' /> */}
+                        <Route exact path='/login' component={() => <LoginForm
+                            get_token={(username, password) => this.get_token(username, password)}/>}/>}/>
+                        <Route exact path='/user/:id' component={() => <UserList users={this.state.users}/>}/>
                     </Switch>
                 </HashRouter>
             </div>

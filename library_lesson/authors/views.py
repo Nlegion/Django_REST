@@ -14,15 +14,15 @@ from rest_framework.authtoken.models import Token
 # Create your views here.
 #
 
-class CustomPermission(BasePermission):
-    def has_permission(self, request, view):
-        return request.user.is_staff
+# class CustomPermission(BasePermission):
+#     def has_permission(self, request, view):
+#         return request.user.is_staff
 
 
 class AuthorModelViewSet(ModelViewSet):
     queryset = Author.objects.all()
     serializer_class = AuthorSerializer
-    permission_classes = [CustomPermission]
+    # permission_classes = [CustomPermission]
 
 
 class BiographyModelViewSet(ModelViewSet):

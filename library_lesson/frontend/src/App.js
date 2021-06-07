@@ -4,6 +4,7 @@ import './App.css';
 import AuthorList from "./components/Authors";
 import BookList from "./components/Book";
 import AuthorPage from "./components/AuthorPage";
+import LoginForm from "./components/Auth"
 import axios from 'axios';
 import {HashRouter, Route, Redirect, Switch, Link} from "react-router-dom";
 
@@ -18,53 +19,95 @@ const NotFound404 = ({location}) => {
 class App extends React.Component {
     constructor(props) {
         super(props);
-        const author1 = {id: 1, name: 'Грин', birthday_year: 1880}
-        const author2 = {id: 2, name: 'Пушкин', birthday_year: 1799}
-        const authors = [author1, author2]
-        const book1 = {id: 1, name: 'Алые паруса', author: author1}
-        const book2 = {id: 2, name: 'Золотая цепь', author: author1}
-        const book3 = {id: 3, name: 'Пиковая дама', author: author2}
-        const book4 = {id: 4, name: 'Руслан и Людмила', author: author2}
-        const books = [book1, book2, book3, book4]
+        let token = localStorage.getItem('token');
         this.state = {
-            'authors': authors,
-            'books': books
+            'authors': [],
+            'books': [],
+            'token': token
         }
-        // this.state = {
-        //     'authors': [],
-        //     'books': []
-        // }
+    }
+
+    restore_token() {
+        let token = localStorage.getItem('token');
+        this.setState(
+            {
+                'token': token
+            }
+        );
+
+    }
+
+    create_header() {
+        if (!this.is_auth())
+            return {};
+
+        return {
+            'Authorization': 'Token ' + this.state.token
+        }
+    }
+
+    load_data() {
+        let headers = this.create_header();
+
+        axios
+            .get('http://127.0.0.1:8000/api/authors/', {headers})
+            .then(response => {
+                const authors = response.data
+                this.setState(
+                    {
+                        'authors': authors
+                    }
+                )
+            })
+            .catch(error => console.log(error))
+
+        axios
+            .get('http://127.0.0.1:8000/api/books/', {headers})
+            .then(response => {
+                const books = response.data
+                this.setState(
+                    {
+                        'books': books
+                    }
+                )
+            })
+            .catch(error => console.log(error))
     }
 
     componentDidMount() {
-        //     axios
-        //         .get('http://127.0.0.1:8000/api/authors/')
-        //         .then(response => {
-        //             const authors = response.data
-        //             this.setState(
-        //                 {
-        //                     'authors': authors
-        //                 }
-        //             )
-        //         }).catch(error => console.log(error))
+        this.restore_token();
+        this.load_data();
+    }
 
-        //#################################################
+    is_auth() {
+        return this.state.token != '';
+    }
 
-        // const authors = [{
-        //     'first_name': 'Фёдор',
-        //     'last_name': 'Достоевский',
-        //     'birthday_year': 1821
-        // },
-        //     {
-        //         'first_name': 'Александр',
-        //         'last_name': 'Грин',
-        //         'birthday_year': 1880
-        //     },]
-        // this.setState({
-        //     'authors': authors,
-        // });
+    logout() {
+        this.setState(
+            {
+                'token': ''
+            }
+        );
+    }
 
+    get_token(login, password) {
+        axios
+            .post(
+                'http://127.0.0.1:8000/api-token-auth/',
+                {"username": login, "password": password}
+            )
+            .then(response => {
+                this.setState(
+                    {
+                        'token': response.data.token
+                    }
+                );
+                localStorage.setItem('token', response.data.token)
 
+                console.log(this.state.token);
+            })
+            .catch(error => alert('Лажа с паролем'))
     }
 
     render() {
@@ -79,11 +122,19 @@ class App extends React.Component {
                             <li>
                                 <Link to='/books'>Books</Link>
                             </li>
+                            <li>
+                                {this.is_auth() ?
+                                    <button onClick={() => this.logout()}> Лагаут</button>
+                                    :
+                                    <Link to='/login'>Login</Link>}
+                            </li>
                         </ul>
                     </nav>
                     <Switch>
                         <Route exact path='/' component={() => <AuthorList authors={this.state.authors}/>}/>
                         <Route exact path='/books' component={() => <BookList books={this.state.books}/>}/>
+                        <Route exact path='/login' component={() => <LoginForm
+                            get_token={(username, password) => this.get_token(username, password)}/>}/>}/>
                         <Route exact path='/author/:id' component={() => <AuthorPage authors={this.state.authors}/>}/>
                         <Redirect from='/authors' to='/'/>
                         <Route component={NotFound404}/>

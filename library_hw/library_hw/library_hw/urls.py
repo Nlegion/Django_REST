@@ -35,4 +35,5 @@ urlpatterns = [
     # path('filters/', include(filter_router.urls)),
     path('api-auth/', include('rest_framework.urls')),
     path('api-token-auth/', views.obtain_auth_token),
+
 ]
