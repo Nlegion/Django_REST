@@ -84,14 +84,14 @@ class App extends React.Component {
     }
 
     is_auth() {
-        return this.state.token != '';
+        return !!(this.state.token != '');
     }
 
     logout() {
         this.setState(
             {
                 'token': ''
-            }
+            }, this.load_data
         );
     }
 
@@ -105,11 +105,9 @@ class App extends React.Component {
                 this.setState(
                     {
                         'token': response.data.token
-                    }
+                    }, this.load_data
                 );
                 localStorage.setItem('token', response.data.token)
-
-                console.log(this.state.token);
             })
             .catch(error => alert('Лажа с паролем'))
     }
