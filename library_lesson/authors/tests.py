@@ -6,10 +6,9 @@ from rest_framework.test import APIRequestFactory, force_authenticate, APIClient
 from mixer.backend.django import mixer
 from django.contrib.auth.models import User
 from .views import AuthorModelViewSet
-from .models import Author, Book, Article, Bibliography
+from .models import Author, Book, Article
 
-
-class TestAuthorViewSet(APITestCase):
+# class TestAuthorViewSet(APITestCase):
 
     # def test_post(self):
     #     factory = APIRequestFactory()
@@ -28,16 +27,16 @@ class TestAuthorViewSet(APITestCase):
     #     response = self.client.post('/api/authors/', {'first_name': 'Александр', 'last_name': 'Грин', 'birthday_year': 1880})
     #     self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
 
-    def test_get_detail(self):
-        bibliography = mixer.blend(Bibliography)
-        # author = mixer.blend(Author, birthday_year=1799)
-        # article = mixer.blend(Article, author__birthday_year=1799)
-        # author = Author.objects.create(first_name='Александр', last_name='Пушкин', birthday_year=1799)
-        response = self.client.get(f'/api/article/{bibliography.article.id}/')
-        print(response.data)
-        response = self.client.get(f'/api/authors/{bibliography.article.author.id}/')
-        print(response.data)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+# def test_get_detail(self):
+#     bibliography = mixer.blend(Bibliography)
+#     # author = mixer.blend(Author, birthday_year=1799)
+#     # article = mixer.blend(Article, author__birthday_year=1799)
+#     # author = Author.objects.create(first_name='Александр', last_name='Пушкин', birthday_year=1799)
+#     response = self.client.get(f'/api/article/{bibliography.article.id}/')
+#     print(response.data)
+#     response = self.client.get(f'/api/authors/{bibliography.article.author.id}/')
+#     print(response.data)
+#     self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     # def test_edit_guest(self):
     #     author = Author.objects.create(first_name='Александр', last_name='Пушкин', birthday_year=1799)

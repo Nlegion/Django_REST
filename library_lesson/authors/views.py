@@ -32,7 +32,11 @@ class BiographyModelViewSet(ModelViewSet):
 
 class ArticleModelViewSet(ModelViewSet):
     queryset = Article.objects.all()
-    serializer_class = ArticleSerializer
+
+    def get_serializer_class(self):
+        if self.request.version == '2.0':
+            return ArticleSerializerV2
+        return ArticleSerializerV1
 
 
 @api_view(['GET'])

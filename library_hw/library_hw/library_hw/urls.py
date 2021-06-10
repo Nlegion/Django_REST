@@ -14,15 +14,30 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from rest_framework.routers import DefaultRouter
 from rest_framework.urls import *
-from users.views import UserModelViewSet
+from users.views import UserModelViewSet, CustomUserModelViewSet, UserModelViewSet1, UserModelViewSet2
 from TODO.views import ProjectModelViewSet, TODOViewSet
 from rest_framework.authtoken import views
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from rest_framework.permissions import AllowAny
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title='library',
+        default_version='1.0',
+        description='Some description',
+    ),
+    public=True,
+    permission_classes=(AllowAny,)
+)
 
 router = DefaultRouter()
 router.register('users', UserModelViewSet)
+# router.register('users_1', UserModelViewSet1)
+# router.register('users_2', UserModelViewSet2)
 router.register('Project', ProjectModelViewSet)
 router.register('ToDo', TODOViewSet)
 
@@ -35,5 +50,8 @@ urlpatterns = [
     # path('filters/', include(filter_router.urls)),
     path('api-auth/', include('rest_framework.urls')),
     path('api-token-auth/', views.obtain_auth_token),
-
+    re_path(r'^api/(?P<version>\d\.\d)/users/$', CustomUserModelViewSet.as_view({'get': 'list'})),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    re_path('^swagger(?P<format>\d\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0),
+            name='schema-json'),
 ]

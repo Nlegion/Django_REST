@@ -14,7 +14,13 @@ class BiographySerializer(serializers.ModelSerializer):
         fields = ['text', 'authors']
 
 
-class ArticleSerializer(serializers.ModelSerializer):
+class ArticleSerializerV1(serializers.ModelSerializer):
+    class Meta:
+        model = Article
+        fields = ['first_name', 'last_name']
+
+
+class ArticleSerializerV2(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = '__all__'
