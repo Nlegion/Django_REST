@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'TODO',
     'rest_framework.authtoken',
     'drf_yasg',
+    'graphene_django',
 ]
 
 MIDDLEWARE = [
@@ -158,3 +159,8 @@ STATIC_URL = '/static/'
 #     import local_settings
 # except:
 #     ModuleNotFoundError
+
+GRAPHENE = {
+    # 'SCHEMA': 'users.schema.schema',
+    'SCHEMA': 'TODO.schema.schema',
+}
