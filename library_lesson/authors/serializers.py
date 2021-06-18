@@ -17,7 +17,8 @@ class BiographySerializer(serializers.ModelSerializer):
 class ArticleSerializerV1(serializers.ModelSerializer):
     class Meta:
         model = Article
-        fields = ['first_name', 'last_name']
+        # fields = ['first_name', 'last_name']
+        fields = '__all__'
 
 
 class ArticleSerializerV2(serializers.ModelSerializer):

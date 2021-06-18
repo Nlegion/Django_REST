@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProjectItem = ({project}) => {
+const ProjectItem = ({project, deleteProject}) => {
     return (
         <tr>
             <td>
@@ -15,12 +15,15 @@ const ProjectItem = ({project}) => {
             <td>
                 {project.link}
             </td>
+            <td>
+                <button onClick={() => deleteProject(project.id)} type='submit'>Delete</button>
+            </td>
         </tr>
 
     )
 }
 
-const ProjectList = ({projects}) => {
+const ProjectList = ({projects, deleteProject}) => {
     return (
         <div>
             <table>
@@ -36,7 +39,10 @@ const ProjectList = ({projects}) => {
                 <th>
                     ссылки
                 </th>
-                {projects.map((project) => <ProjectItem project={project}/>)}
+                <th>
+                    кнопка
+                </th>
+                {projects.map((project) => <ProjectItem project={project} deleteProject={deleteProject}/>)}
             </table>
         </div>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 const AuthorItem = ({author}) => {
     return (
@@ -20,24 +20,24 @@ const AuthorItem = ({author}) => {
     )
 }
 
-
 const AuthorList = ({authors}) => {
     return (
         <table>
             <th>
-                ID
+                Id
             </th>
             <th>
-                Имя
+                First name
             </th>
             <th>
-                Фамилия
+                Last name
             </th>
             <th>
-                Дата Рождения
+                Birthday year
             </th>
             {authors.map((author) => <AuthorItem author={author}/>)}
         </table>
     )
 }
+
 export default AuthorList;

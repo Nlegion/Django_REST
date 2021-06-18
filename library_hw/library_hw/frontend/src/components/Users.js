@@ -1,15 +1,15 @@
 import React from 'react'
 
 
-const UserItem = ({user}) => {
+const UserItem = ({users}) => {
     return (
         <tr>
             <td>
-                {user.email}
+                {users.email}
             </td>
 
             <td>
-                {user.name}
+                {users.name}
             </td>
         </tr>
 
@@ -24,7 +24,7 @@ const UserList = ({users}) => {
                 <td>Email</td>
                 <td>Name</td>
             </tr>
-            {users.map((user) => <UserItem user={user}/>)}
+            {users.map((users) => <UserItem user={users}/>)}
         </table>
     )
 }

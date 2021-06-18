@@ -41,7 +41,7 @@ router.register('users', UserModelViewSet)
 # router.register('users_1', UserModelViewSet1)
 # router.register('users_2', UserModelViewSet2)
 router.register('Project', ProjectModelViewSet)
-router.register('ToDo', TODOViewSet)
+router.register('TODO', TODOViewSet)
 
 filter_router = DefaultRouter()
 filter_router.register('title', ProjectModelViewSet)
