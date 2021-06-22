@@ -2,21 +2,91 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74628923-5dcf-4102-8fda-efb5768706a9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/library_hw/frontend/src/components/ProjectForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library_hw/frontend/src/components/TodoForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../library_lesson/frontend/src/components/BookForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library_hw/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library_hw/backend/users/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library_hw/backend/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library_hw/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library_hw/frontend/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library_hw/nginx/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library_hw/nginx/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library_hw/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library_hw/wait-for-postgres.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/migrations/0002_article_biography_book.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/schema.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/authors/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/library/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/library/local_settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/library/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/library/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/library/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/backend/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/frontend/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/nginx/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../library_lesson/nginx/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../wait-for-postgres.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library_hw/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library_hw/frontend/src/components/Project.js" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/frontend/src/components/Project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library_hw/frontend/src/components/TodoPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/frontend/src/components/TodoPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library_hw/frontend/src/components/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/frontend/src/components/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library_hw/library_hw/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/library_hw/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../library_lesson/authors/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library_lesson/frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../library_lesson/frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library_lesson/frontend/src/components/Authors.js" beforeDir="false" afterPath="$PROJECT_DIR$/../library_lesson/frontend/src/components/Author.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library_lesson/frontend/src/components/Book.js" beforeDir="false" afterPath="$PROJECT_DIR$/../library_lesson/frontend/src/components/Book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library_lesson/library/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../library_lesson/library/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library_lesson/library/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../library_lesson/library/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/TODO/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/TODO/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/TODO/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/TODO/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/TODO/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/TODO/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/TODO/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/TODO/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/TODO/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/TODO/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/TODO/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/TODO/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/TODO/schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/TODO/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/TODO/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/TODO/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/TODO/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/TODO/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/TODO/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/library_hw/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/TODO/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/library_hw/local_settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/library_hw/local_settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/library_hw/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/library_hw/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/library_hw/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/library_hw/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/library_hw/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/library_hw/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/managers.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/managers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/migrations/0002_auto_20210610_1738.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/migrations/0002_auto_20210610_1738.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/library_hw/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/library_hw/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/library_hw/backend/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/migrations/0002_article_biography_book.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/schema.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/serializers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/authors/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/library/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/library/local_settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/library/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/library/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/library/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library_lesson/manage.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +96,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -59,6 +129,7 @@
       <recent name="$PROJECT_DIR$/library_hw/users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/library_hw/backend" />
       <recent name="$PROJECT_DIR$/library_hw/frontend/src/components" />
     </key>
   </component>
@@ -71,12 +142,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/library_hw" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/library_hw/backend" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/library_hw/manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/library_hw/backend/manage.py" />
       <option name="PARAMETERS" value="runserver" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -134,11 +205,18 @@
       <workItem from="1623945918629" duration="287000" />
       <workItem from="1623948495875" duration="174000" />
       <workItem from="1623994624794" duration="4958000" />
+      <workItem from="1624012844471" duration="265000" />
+      <workItem from="1624193851867" duration="216000" />
+      <workItem from="1624195108544" duration="353000" />
+      <workItem from="1624371495979" duration="2785000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -156,6 +234,6 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/library_hw$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1624011622848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/library_hw" />
+    <SUITE FILE_PATH="coverage/library_hw$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1624373911704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/library_hw/backend" />
   </component>
 </project>
